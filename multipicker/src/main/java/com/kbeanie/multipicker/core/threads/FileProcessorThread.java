@@ -151,6 +151,7 @@ public class FileProcessorThread extends Thread {
             File copyTo = new File(outputPath);
             FileUtils.copyFile(inputFile, copyTo);
             file.setOriginalPath(copyTo.getAbsolutePath());
+            file.setOriginalPath2(inputFile.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             throw new PickerException(e);

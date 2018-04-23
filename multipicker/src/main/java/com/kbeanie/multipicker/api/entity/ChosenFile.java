@@ -17,6 +17,12 @@ public class ChosenFile implements Parcelable {
      * Processed path to file. This should always be a local path on the device.
      */
     private String originalPath;
+
+    /**
+     * Processed original folder path to file. This should always be a local path on the device.
+     */
+    private String originalPath2;
+
     /**
      * Mime Type of the processed file
      */
@@ -168,6 +174,14 @@ public class ChosenFile implements Parcelable {
 
     public void setOriginalPath(String originalPath) {
         this.originalPath = originalPath;
+    }
+
+    public String getOriginalPath2() {
+        return originalPath2;
+    }
+
+    public void setOriginalPath2(String originalPath2) {
+        this.originalPath2 = originalPath2;
     }
 
     /**
