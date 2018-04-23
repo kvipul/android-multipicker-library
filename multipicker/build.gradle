@@ -9,7 +9,7 @@ signing {
     required {
         has("release") && gradle.taskGraph.hasTask("uploadArchives")
     }
-//    sign configurations.archives
+    sign configurations.archives
 }
 
 uploadArchives {

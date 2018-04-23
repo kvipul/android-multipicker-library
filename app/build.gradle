@@ -36,28 +36,29 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
+
     }
 }
 
-gradle.taskGraph.whenReady { taskGraph ->
-    if (taskGraph.hasTask(':app:assembleRelease')) {
-        /**
-         * Configure Release key
-         */
-        def props = new Properties()
-        props.load(new FileInputStream(rootProject.file("extras/secret.properties")))
-        android.signingConfigs.release.keyAlias props.alias
-        android.signingConfigs.release.storePassword props.getProperty('keyStorePassword')
-        android.signingConfigs.release.keyPassword props.getProperty('keyAliasPassword')
-    }
-}
+//gradle.taskGraph.whenReady { taskGraph ->
+//    if (taskGraph.hasTask(':app:assembleRelease')) {
+//        /**
+//         * Configure Release key
+//         */
+//        def props = new Properties()
+//        props.load(new FileInputStream(rootProject.file("extras/secret.properties")))
+//        android.signingConfigs.release.keyAlias props.alias
+//        android.signingConfigs.release.storePassword props.getProperty('keyStorePassword')
+//        android.signingConfigs.release.keyPassword props.getProperty('keyAliasPassword')
+//    }
+//}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
