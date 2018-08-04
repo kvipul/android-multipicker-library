@@ -42,6 +42,10 @@ public final class ImagePicker extends ImagePickerImpl {
         this.allowMultiple = true;
     }
 
+    public void setMultiple(boolean isMultiple) {
+        this.allowMultiple = isMultiple;
+    }
+
     /**
      * Triggers Image selection
      */
